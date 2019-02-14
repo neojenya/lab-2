@@ -5,23 +5,24 @@ import ru.avalon.java.ocpjp.labs.console.ConsoleUI;
 import java.io.IOException;
 
 /**
- * Лабораторная работа №3
+ * Лабораторная работа №2
  * <p>
- * Курс: "Программирование на платформе Java. Разработка
- * многоуровневых приложений"
+ * Курс: "DEV-OCPJP. Подготовка к сдаче
+ * сертификационных экзаменов серии Oracle Certified
+ * Professional Java Programmer"
  * <p>
  * Тема: "Потоки исполнения (Threads) и многозадачность" 
  *
  * @author Daniel Alpatov <danial.alpatov@gmail.com>
  */
-public class Lab3 extends ConsoleUI<Commands> {
+public class Main extends ConsoleUI<Commands> {
     /**
      * Точка входа в приложение.
      * 
      * @param args 
      */
     public static void main(String[] args) {
-        new Lab3().run();
+        new Main().run();
     }
     /**
      * Конструктор класса.
@@ -29,7 +30,7 @@ public class Lab3 extends ConsoleUI<Commands> {
      * Инициализирует экземпляр базового типа с использоавнием
      * перечисления {@link Commands}.
      */
-    Lab3() {
+    Main() {
         super(Commands.class);
     }
 
