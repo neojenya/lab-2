@@ -38,7 +38,6 @@ public class ConsoleUI<E extends Enum<E>> extends EnumReader<E> implements Runna
      */
     protected void processCommand() {
         try {
-            System.out.print("> ");
             onCommand(next());
         } catch (IOException e) {
             System.err.println(e.getMessage());
@@ -50,6 +49,7 @@ public class ConsoleUI<E extends Enum<E>> extends EnumReader<E> implements Runna
      */
     @Override
     public void run() {
+        System.out.print("> ");
         while (!exit) processCommand();
     }
 

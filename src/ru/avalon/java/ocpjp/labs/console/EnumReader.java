@@ -16,6 +16,7 @@ public class EnumReader<E extends Enum<E>> implements Closeable {
      * Читатель потока
      */
     private BufferedReader in;
+    private String[] args;
 
     /**
      * Описатель типа перечисления, описанного параметром
@@ -44,10 +45,17 @@ public class EnumReader<E extends Enum<E>> implements Closeable {
      */
     public final E next() throws IOException {
         try {
-            return E.valueOf(cls, in.readLine());
+            String line = in.readLine();
+            args = line.split(" ");
+            return E.valueOf(cls, args[0]);
+//            return E.valueOf(cls, in.readLine());
         } catch (IllegalArgumentException e) {
             throw new IOException(e.getMessage(), e);
         }
+    }
+    
+    public String[] getArgs() {
+        return args;
     }
     /**
      * ОСвобождает ресурсы, связанные с экземпляром класса.
