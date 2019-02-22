@@ -1,8 +1,13 @@
 package ru.avalon.java.ocpjp.labs;
 
+import ru.avalon.java.ocpjp.labs.actions.FileDeleteAction;
 import ru.avalon.java.ocpjp.labs.console.ConsoleUI;
 
 import java.io.IOException;
+import ru.avalon.java.ocpjp.labs.actions.Action;
+import ru.avalon.java.ocpjp.labs.actions.FileCopyAction;
+import ru.avalon.java.ocpjp.labs.actions.FileMoveAction;
+import ru.avalon.java.ocpjp.labs.actions.FileRenameAction;
 
 /**
  * Лабораторная работа №2
@@ -40,22 +45,21 @@ public class Main extends ConsoleUI<Commands> {
     @Override
     protected void onCommand(Commands command) throws IOException {
         switch (command) {
-            case copy:
-                /*
-                 * TODO №6 Обработайте команду copy
-                 */
+            case copy:                
+                Action copy = new FileCopyAction();
+                break;
+            case delete:
+                Action delete = new FileDeleteAction();
                 break;
             case move:
-                /*
-                 * TODO №7 Обработайте команду move
-                 */
+                Action move = new FileMoveAction();
+                break;
+            case rename:
+                Action rename = new FileRenameAction();
                 break;
             case exit:
                 close();
                 break;
-                /*
-                 * TODO №9 Обработайте необработанные команды
-                 */
         }
     }
     
